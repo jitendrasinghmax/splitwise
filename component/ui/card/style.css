@@ -1,0 +1,12 @@
+.card-div{
+    box-shadow: 0 0 2px black;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 2%;
+    width: 100%;
+}
+.card-div:hover{
+    background-color: rgb(215, 234, 203);
+}
+

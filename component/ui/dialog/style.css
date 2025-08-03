@@ -1,0 +1,19 @@
+.dialog-div {
+  position: fixed;
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0; */
+  background-color: rgba(0, 0, 0, 0.5); /* black at 50% opacity */
+  backdrop-filter: blur(4px); /* slight blur behind overlay */
+  z-index: 1000;
+  
+}
+@keyframes example {
+  0%   {opacity:0 ;}
+  
+  100% {opacity: 1;}
+}
+
+/* The element to apply the animation to */
+.dialog-div {
+   animation-name: example;
+  animation-duration: 0.3s;
+}
