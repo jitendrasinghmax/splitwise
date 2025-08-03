@@ -4,11 +4,9 @@ import { api } from "../../../../convex/_generated/api";
 import { useConvexQuery } from "../../../../hooks/use-convex-query";
 import Button from "../../../../component/ui/button/Button";
 import Card from "../../../../component/ui/card/card";
-import Image from "next/image";
 
 export default function () {
     const { data, isLoading } = useConvexQuery(api.contacts.getAllContacts);
-    console.log({ data, isLoading })
     if (isLoading) {
         return <div className="contacts-loading">
             <BarLoader width="100%" height={5} loading={true} color="#36d7d7" />
@@ -38,7 +36,7 @@ export default function () {
                             <div className="contacts-people-container">
                                 {
                                     users.map((user) => (
-                                        <Card className="contacts-people-card-container">
+                                        <Card key={user.id} className="contacts-people-card-container">
                                             <div style={{
                                                 overflow: "hidden",
                                                 borderRadius: "100%",
@@ -67,7 +65,7 @@ export default function () {
                             <div className="contacts-people-container">
                                 {
                                     groups.map((group) => (
-                                        <Card className="contacts-people-card-container">
+                                        <Card key={group.id} className="contacts-people-card-container">
                                             <div style={{
                                                 overflow: "hidden",
                                                 borderRadius: "100%",
